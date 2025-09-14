@@ -1,0 +1,26 @@
+disk_load:
+    pusha
+    push dx
+
+    mov ah, 0x02
+    mov al, dh
+    mov ch, 0x00
+    mov dh, 0x00
+    mov cl, 0x02
+
+    int 0x13
+    jc disk_error
+
+    pop dx
+    cmp al, dh
+    jne disk_error
+
+    popa
+    ret
+
+disk_error:
+    mov si, disk_error_msg
+    call print_string
+    jmp $
+
+disk_error_msg db "[E] Disk error! Press any key...",0
