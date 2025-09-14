@@ -46,8 +46,8 @@ sudo dnf install nasm make gcc qemu-system-x86 xorriso grub2-efi
 ### Build Process
 
 ```bash
-git clone https://github.com/yourusername/Android-Boot-Loader.git
-cd Android-Boot-Loader
+git clone https://github.com/FMZNkdv/ABL.git
+cd ABL
 make all
 ```
 
